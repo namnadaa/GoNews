@@ -40,7 +40,7 @@ func (api *API) Router() *mux.Router {
 
 // Получение всех публикаций.
 func (api *API) postsHandler(w http.ResponseWriter, r *http.Request) {
-	posts, err := api.db.Posts()
+	posts, err := api.db.GetPosts()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

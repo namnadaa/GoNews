@@ -20,19 +20,19 @@ func main() {
 	// Создаём объекты баз данных.
 	//
 	// БД в памяти.
-	db := memdb.New()
-    /*
-	// Реляционная БД PostgreSQL.
-	db2, err := postgres.New("postgres://postgres:postgres@server.domain/posts")
-	if err != nil {
-		log.Fatal(err)
-	}
-	// Документная БД MongoDB.
-	db3, err := mongo.New("mongodb://server.domain:27017/")
-	if err != nil {
-		log.Fatal(err)
-	}
-	_, _ = db2, db3
+	db := memdb.NewStore()
+	/*
+		// Реляционная БД PostgreSQL.
+		db2, err := postgres.New("postgres://postgres:postgres@server.domain/posts")
+		if err != nil {
+			log.Fatal(err)
+		}
+		// Документная БД MongoDB.
+		db3, err := mongo.New("mongodb://server.domain:27017/")
+		if err != nil {
+			log.Fatal(err)
+		}
+		_, _ = db2, db3
 	*/
 
 	// Инициализируем хранилище сервера конкретной БД.
