@@ -6,7 +6,7 @@ import (
 )
 
 // Хранилище данных.
-type Store struct {
+type MemoryStorage struct {
 	mu      sync.RWMutex
 	Posts   []storage.Post
 	Users   []storage.User
@@ -14,8 +14,8 @@ type Store struct {
 }
 
 // Конструктор объекта хранилища.
-func NewStore() *Store {
-	return &Store{
+func NewMemoryStorage() *MemoryStorage {
+	return &MemoryStorage{
 		Posts:   []storage.Post{},
 		Users:   []storage.User{},
 		counter: 1,

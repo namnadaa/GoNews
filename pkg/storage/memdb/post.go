@@ -7,7 +7,7 @@ import (
 )
 
 // Posts - возвращает список всех постов.
-func (s *Store) GetPosts() ([]storage.Post, error) {
+func (s *MemoryStorage) GetPosts() ([]storage.Post, error) {
 	s.mu.RLock()
 	defer s.mu.RUnlock()
 
@@ -27,7 +27,7 @@ func (s *Store) GetPosts() ([]storage.Post, error) {
 }
 
 // AddPost добавляет новый пост в память.
-func (s *Store) AddPost(sp storage.Post) error {
+func (s *MemoryStorage) AddPost(sp storage.Post) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 
@@ -65,7 +65,7 @@ func (s *Store) AddPost(sp storage.Post) error {
 }
 
 // UpdatePost обновляет пост.
-func (s *Store) UpdatePost(sp storage.Post) error {
+func (s *MemoryStorage) UpdatePost(sp storage.Post) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 
@@ -101,7 +101,7 @@ func (s *Store) UpdatePost(sp storage.Post) error {
 }
 
 // DeletePost - удаляет пост.
-func (s *Store) DeletePost(sp storage.Post) error {
+func (s *MemoryStorage) DeletePost(sp storage.Post) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 
